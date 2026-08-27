@@ -11,11 +11,41 @@
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script>
+        (function () {
+            try {
+                var saved = localStorage.getItem('lordrans-lore:theme');
+                var theme = saved ? saved : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                if (theme === 'light') {
+                    document.documentElement.setAttribute('data-theme', 'light');
+                }
+            } catch (e) { /* segue no tema padrão (escuro) */ }
+        })();
+    </script>
 </head>
 
 <body>
 
     <div class="embers" id="embers" aria-hidden="true"></div>
+
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Alternar para modo claro">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.7 14.9A8.5 8.5 0 0 1 9.1 3.3a.75.75 0 0 0-.9-1 10 10 0 1 0 13.5 13.5.75.75 0 0 0-1-.9z" />
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.5" />
+            <g stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+                <line x1="12" y1="1.5" x2="12" y2="4.5" />
+                <line x1="12" y1="19.5" x2="12" y2="22.5" />
+                <line x1="1.5" y1="12" x2="4.5" y2="12" />
+                <line x1="19.5" y1="12" x2="22.5" y2="12" />
+                <line x1="4.2" y1="4.2" x2="6.3" y2="6.3" />
+                <line x1="17.7" y1="17.7" x2="19.8" y2="19.8" />
+                <line x1="4.2" y1="19.8" x2="6.3" y2="17.7" />
+                <line x1="17.7" y1="6.3" x2="19.8" y2="4.2" />
+            </g>
+        </svg>
+    </button>
 
     <header>
         <div class="header-inner">
@@ -58,7 +88,7 @@
     </section>
 
     <main>
-        <p class="section-label">Registro de Chefes &mdash; Undead Asylum ao Blighttown</p>
+        <p class="section-label">Registro de Chefes &mdash; Undead Asylum ao Kiln of the First Flame</p>
 
         <article class="boss-card">
             <span class="corner tl" aria-hidden="true"></span>
@@ -129,6 +159,196 @@
                     (AoE) que causa muito dano. Ataque as laterais das patas para ficar seguro.</p>
 
                 <button class="like-btn" type="button" data-boss-id="chaos-witch-quelaag" aria-pressed="false">
+                    <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
+                    </svg>
+                    <span class="like-count">0</span>
+                    <span class="like-word">curtidas</span>
+                </button>
+            </div>
+        </article>
+        <article class="boss-card">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+
+            <div class="boss-number" aria-hidden="true">IV</div>
+            <div class="boss-body">
+                <p class="boss-kicker">Alma de Chefe</p>
+                <h2>Iron Golem <span>&mdash; Golem de Ferro</span></h2>
+                <p class="boss-location"><span class="loc-label">Localiza&ccedil;&atilde;o</span> Sen's Fortress</p>
+                <p class="boss-tip">A arena &eacute; estreita e tem uma queda mortal nas bordas &mdash; cuidado com o
+                    golpe de tapa, que pode te empurrar para fora. Ataque as pernas de perto e fique atento ao ataque
+                    giratório de longo alcance. Se conseguir, um ataque em queda no in&iacute;cio tira uma boa
+                    fatia da vida dele.</p>
+
+                <button class="like-btn" type="button" data-boss-id="iron-golem" aria-pressed="false">
+                    <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
+                    </svg>
+                    <span class="like-count">0</span>
+                    <span class="like-word">curtidas</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="boss-card">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+
+            <div class="boss-number" aria-hidden="true">V</div>
+            <div class="boss-body">
+                <p class="boss-kicker">Alma de Chefe</p>
+                <h2>Ornstein &amp; Smough <span>&mdash; Ornstein e Smough</span></h2>
+                <p class="boss-location"><span class="loc-label">Localiza&ccedil;&atilde;o</span> Anor Londo</p>
+                <p class="boss-tip">A batalha mais respeitada do jogo. Escolha um alvo e foque nele o tempo todo
+                    &mdash; matar Ornstein primeiro deixa Smough mais lento, mas com mais vida; matar Smough primeiro
+                    faz Ornstein absorver o poder dele e ficar muito mais r&aacute;pido e perigoso. Use os pilares da
+                    sala para quebrar linha de vis&atilde;o quando os dois estiverem em cima de voc&ecirc;.</p>
+
+                <button class="like-btn" type="button" data-boss-id="ornstein-smough" aria-pressed="false">
+                    <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
+                    </svg>
+                    <span class="like-count">0</span>
+                    <span class="like-word">curtidas</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="boss-card">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+
+            <div class="boss-number" aria-hidden="true">VI</div>
+            <div class="boss-body">
+                <p class="boss-kicker">Alma de Chefe</p>
+                <h2>Seath the Scaleless <span>&mdash; Seath, o Sem Escamas</span></h2>
+                <p class="boss-location"><span class="loc-label">Localiza&ccedil;&atilde;o</span> Duke's Archives</p>
+                <p class="boss-tip">Se voc&ecirc; ainda n&atilde;o quebrou o cristal em seu peito na cutscene
+                    obrigat&oacute;ria, corra at&eacute; ele e ataque-o assim que a luta come&ccedil;ar para
+                    remov&ecirc;-lo &mdash; isso impede o ataque de cristaliza&ccedil;&atilde;o (que te transforma em
+                    pedra). Depois disso, mantenha dist&acirc;ncia do sopro cristalino e ataque as patas.</p>
+
+                <button class="like-btn" type="button" data-boss-id="seath-the-scaleless" aria-pressed="false">
+                    <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
+                    </svg>
+                    <span class="like-count">0</span>
+                    <span class="like-word">curtidas</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="boss-card">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+
+            <div class="boss-number" aria-hidden="true">VII</div>
+            <div class="boss-body">
+                <p class="boss-kicker">Alma de Chefe</p>
+                <h2>The Four Kings <span>&mdash; Os Quatro Reis</span></h2>
+                <p class="boss-location"><span class="loc-label">Localiza&ccedil;&atilde;o</span> New Londo Ruins</p>
+                <p class="boss-tip">Um combo de resist&ecirc;ncia contra a escurid&atilde;o (Darkwraith) ajuda muito.
+                    Fique sempre pr&oacute;ximo e agressivo &mdash; se voc&ecirc; ficar longe demais, mais reis
+                    surgem ao mesmo tempo. O objetivo &eacute; derrubar a vida total antes que os quatro fantasmas
+                    apare&ccedil;am juntos.</p>
+
+                <button class="like-btn" type="button" data-boss-id="four-kings" aria-pressed="false">
+                    <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
+                    </svg>
+                    <span class="like-count">0</span>
+                    <span class="like-word">curtidas</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="boss-card">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+
+            <div class="boss-number" aria-hidden="true">VIII</div>
+            <div class="boss-body">
+                <p class="boss-kicker">Alma de Chefe</p>
+                <h2>Gravelord Nito <span>&mdash; Nito, Senhor das Tumbas</span></h2>
+                <p class="boss-location"><span class="loc-label">Localiza&ccedil;&atilde;o</span> Tomb of Giants</p>
+                <p class="boss-tip">Leve uma tocha ou um item de luz &mdash; a masmorra &eacute; quase totalmente
+                    escura antes da luta. A n&eacute;voa de m&iacute;asma que envolve Nito causa dano cont&iacute;nuo
+                    e pode enfraquecer sua resist&ecirc;ncia; fique dentro dela o m&iacute;nimo poss&iacute;vel e
+                    atinja o corpo principal, ignorando os esqueletos que ele invoca.</p>
+
+                <button class="like-btn" type="button" data-boss-id="gravelord-nito" aria-pressed="false">
+                    <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
+                    </svg>
+                    <span class="like-count">0</span>
+                    <span class="like-word">curtidas</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="boss-card">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+
+            <div class="boss-number" aria-hidden="true">IX</div>
+            <div class="boss-body">
+                <p class="boss-kicker">Alma de Chefe</p>
+                <h2>Bed of Chaos <span>&mdash; Leito do Caos</span></h2>
+                <p class="boss-location"><span class="loc-label">Localiza&ccedil;&atilde;o</span> Lost Izalith</p>
+                <p class="boss-tip">Menos uma luta e mais um quebra-cabe&ccedil;a de plataforma. Corra pela
+                    esquerda e pela direita para destruir os dois galhos com ataques r&aacute;pidos, evitando os
+                    bra&ccedil;os que varrem o ch&atilde;o e os buracos que se abrem sob seus p&eacute;s. Depois de
+                    quebrar os dois lados, avance pelo centro para atingir o n&uacute;cleo.</p>
+
+                <button class="like-btn" type="button" data-boss-id="bed-of-chaos" aria-pressed="false">
+                    <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path
+                            d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
+                    </svg>
+                    <span class="like-count">0</span>
+                    <span class="like-word">curtidas</span>
+                </button>
+            </div>
+        </article>
+
+        <article class="boss-card">
+            <span class="corner tl" aria-hidden="true"></span>
+            <span class="corner tr" aria-hidden="true"></span>
+            <span class="corner bl" aria-hidden="true"></span>
+            <span class="corner br" aria-hidden="true"></span>
+
+            <div class="boss-number" aria-hidden="true">X</div>
+            <div class="boss-body">
+                <p class="boss-kicker">Alma de Chefe</p>
+                <h2>Gwyn, Lord of Cinder <span>&mdash; Gwyn, Senhor da Chama</span></h2>
+                <p class="boss-location"><span class="loc-label">Localiza&ccedil;&atilde;o</span> Kiln of the First
+                    Flame</p>
+                <p class="boss-tip">O confronto final. Gwyn &eacute; r&aacute;pido e golpeia forte, mas
+                    n&atilde;o tem muita vida e n&atilde;o pode ser bloqueado com facilidade &mdash; o parry &eacute;
+                    a ferramenta mais eficaz aqui, se voc&ecirc; tiver praticado. Fique atento &agrave;s
+                    combina&ccedil;&otilde;es de golpes com a espada em chamas e n&atilde;o tente ser
+                    ganancioso entre os ataques.</p>
+
+                <button class="like-btn" type="button" data-boss-id="gwyn-lord-of-cinder" aria-pressed="false">
                     <svg class="flame-icon" viewBox="0 0 24 24" aria-hidden="true">
                         <path
                             d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-6 2-9 0-1 1-2 2-2z" />
