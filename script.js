@@ -30,6 +30,44 @@
 })();
 
 // =========================================================
+// Alternância de tema (claro / escuro) — persistida em localStorage
+// =========================================================
+
+(function () {
+    var THEME_KEY = 'lordrans-lore:theme';
+    var toggle = document.getElementById('themeToggle');
+    if (!toggle) return;
+
+    function currentTheme() {
+        return document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            toggle.setAttribute('aria-label', 'Alternar para modo escuro');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            toggle.setAttribute('aria-label', 'Alternar para modo claro');
+        }
+    }
+
+    // Garante que o rótulo do botão comece coerente com o tema já aplicado
+    // pelo script inline no <head>.
+    applyTheme(currentTheme());
+
+    toggle.addEventListener('click', function () {
+        var next = currentTheme() === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        try {
+            localStorage.setItem(THEME_KEY, next);
+        } catch (e) {
+            // segue sem persistir se localStorage estiver indisponível
+        }
+    });
+})();
+
+// =========================================================
 // Sistema de curtidas (fogueiras) — persistido em localStorage
 // Cada boss tem uma contagem própria; o navegador lembra quais
 // o visitante já curtiu, mesmo depois de fechar a página.
