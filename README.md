@@ -2,15 +2,6 @@
 
 Site est&aacute;tico (HTML, CSS e JavaScript puro) com um guia de sobreviv&ecirc;ncia para os principais chefes de *Dark Souls Remastered*, do Undead Asylum ao Kiln of the First Flame.
 
-## Como visualizar
-
-N&atilde;o h&aacute; build nem depend&ecirc;ncias. Basta abrir o `index.html` em um navegador, ou servir a pasta com qualquer servidor est&aacute;tico:
-
-```bash
-python3 -m http.server 8000
-```
-
-e acessar `http://localhost:8000`.
 
 ## Estrutura de arquivos
 
